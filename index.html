@@ -16,6 +16,44 @@
     <button id="button3">LEFT</button>
     <button id="button4">RIGHT</button>
 
+    <script>
+    $('.button1').click(function(){
+        $( document.body ).trigger({
+            type: 'keypress',
+            which: 38,
+            keyCode: 38
+        });
+    });
+    </script>
+    <script>
+    $('.button2').click(function(){
+        $( document.body ).trigger({
+            type: 'keypress',
+            which: 40,
+            keyCode: 40
+        });
+    });
+    </script>
+    <script>
+    $('.button3').click(function(){
+        $( document.body ).trigger({
+            type: 'keypress',
+            which: 37,
+            keyCode: 37
+        });
+    });
+    </script>
+    <script>
+    $('.button4').click(function(){
+        $( document.body ).trigger({
+            type: 'keypress',
+            which: 39,
+            keyCode: 39
+        });
+    });
+    </script>
+
+
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src='./game.js'></script>

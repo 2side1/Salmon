@@ -94,26 +94,6 @@
       }
     })
 
-    // key handling
-    $('html').butdown(function(e) {
-      if (document.getElementById('button1').onpress) {
-        socket.emit('down', players);
-        accelPlayer(socket.id, 0, 1)
-        localDirection = 'down'
-      } else if (document.getElementById('button2').onpress) {
-        socket.emit('up', players);
-        accelPlayer(socket.id, 0, -1)
-        localDirection = 'up'
-      } else if (document.getElementById('button3').onpress) {
-        socket.emit('left', players);
-        accelPlayer(socket.id, -1, 0)
-        localDirection = 'left'
-      } else if (document.getElementById('button4').onpress) {
-        socket.emit('right', players);
-        accelPlayer(socket.id, 1, 0)
-        localDirection = 'right'
-      }
-    })
 
     function gameLoop() {
       // update game
