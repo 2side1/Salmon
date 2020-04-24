@@ -1,9 +1,6 @@
-## War the card Game.
+# Socket.io Game Demo
 
-Simple implmentation of multiplayer card game War using nodejs, socket.io and express.
+This is me messing around with building a (very) simple multiplayer online game with socket.io. See `BLOG.md` for a bit about what my motivations were and what I learnt about this stuff. Hacker News discussion is [here](https://news.ycombinator.com/item?id=15318530).
+ You can check out the game [here](http://socket-blocker.herokuapp.com/)
 
-## Installation
-
-1. npm install
-2. npm run gulp 
-3. npm start
+![Screenshot](./screenshot.png)
