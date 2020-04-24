@@ -1,17 +1,48 @@
+# node-socket-io-game
 
-# Socket.IO Collaborative Whiteboard
+NodeJS + Socket.io example: a simple tennis game. 
 
-A simple collaborative whiteboard for socket.io
+## 1. Getting Started
 
-## How to use
+NodeJS + Socket.io showcase. This application uses socket.io to handle a simple tennis match.
 
-```
-$ npm ci && npm start
-```
+## 2. Build / Run
 
-And point your browser to `http://localhost:3000`. Optionally, specify
-a port by supplying the `PORT` env variable.
+### Prerequisities
 
-## Features
+Install *NPM*, *NodeJS* and *Bower*.
 
-- draw on the whiteboard and all other users will see you drawings live
+### Installing
+
+Download from Git
+
+    mkdir node-socket-io-game
+    cd node-socket-io-game
+    git clone https://github.com/accantelliw/node-socket-io-game
+
+### Run
+
+``` node play.js ```
+
+Open ``` http://localhost ``` 
+
+## 3. Details
+
+### General
+
+You can open multiple browser instances and play saveral games at the same time.
+A list of current playing users across the system will be shown.
+
+## 4. Other
+
+### Author
+
+* **Walter Accantelli** [Github](https://github.com/accantelliw)
+
+### Resources
+
+[Socket.io](http://socket.io/)
+
+### TODO
+
+* Add Material design

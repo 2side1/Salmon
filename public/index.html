@@ -33,8 +33,14 @@
 
 <script>
 document.getElementById("count").innerHTML = var connectCounter;
-socket.on('connect', function() { connectCounter++; });
-socket.on('disconnect', function() { connectCounter--; });
+
+io.on("connection", function(s){
+   connectCounter += 1;
+   s.on("disconnect", function(){
+     connectCounter -= 1;
+   });
+ });
+
 document.getElementById("count").innerHTML = connectCounter;
 </script>
 
