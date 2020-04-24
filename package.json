@@ -1,40 +1,37 @@
 {
-  "name": "io-game-v2",
-  "version": "0.1.6",
-  "description": "Networking with sockets.",
-  "main": "server.js",
-  "repository": "git+https://github.com/valkyrienyanko/io-game-v2.git",
-  "homepage": "https://github.com/valkyrienyanko/io-game-v2#readme",
-  "bugs": "https://github.com/valkyrienyanko/io-game-v2/issues",
-  "author": "valkyrienyanko",
-  "license": "GPL-3.0-or-later",
-  "dependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.0",
-    "profanity-util": "^0.2.0",
-    "socket.io": "^2.3.0"
+  "name": "card-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "devDependencies": {
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-p5js": "^1.0.1",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "standard": "^14.3.1"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/infinit89/card-testing.git"
   },
   "scripts": {
-    "dev:client": "cd app/ && yarn dev",
-    "dev:server": "nodemon --quiet .",
-    "lint": "eslint .",
-    "lint:fix": "eslint --fix .",
-    "build": "cd app/ && yarn build",
-    "postinstall": "cd app/ && yarn install"
+    "start": "node ./dist/app.js",
+    "gulp": "./node_modules/.bin/gulp"
   },
-  "keywords": [
-    "socket.io",
-    "p5.js"
-  ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/infinit89/card-testing/issues"
+  },
+  "homepage": "https://github.com/infinit89/card-testing#readme",
+  "dependencies": {
+    "cluster": "^0.7.7",
+    "express": "^4.14.0",
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.5.0",
+    "jshint": "^2.9.3"
+  },
+  "devDependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-uglify": "^2.0.0"
+  }
 }
