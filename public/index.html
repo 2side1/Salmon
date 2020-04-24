@@ -1,50 +1,40 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Assassin</title>
-  <link rel="stylesheet" href="style.css">
+	<link rel="shortcut icon" href="#">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/gui.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="scripts/model/util.js"></script>
+	<script src="scripts/model/Entity.js"></script>
+	<script src="scripts/model/LivingEntity.js"></script>
+	<script src="scripts/model/Player.js"></script>
+	<script src="scripts/model/Message.js"></script>
+	<script src="scripts/model/Game.js"></script>
+	<script src="scripts/model/GUI/Chat.js"></script>
+	<script src="scripts/model/GUI/UI.js"></script>
+
+
+	<script src="scripts/ui.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+	<!--Socket.io latest links can be found at https://cdnjs.com/libraries/socket.io-->
 </head>
-<body>
 
-  <canvas class="whiteboard" ></canvas>
+<body oncontextmenu="return false">
+	<div id="menu">
+		<div class="element">
+			<h3>IO Game</h3>
+			<input type="text" maxlength="15" id="playerName" placeholder="Enter Name">
+			<button id="button" onclick="play()">Play</button>
+		</div>
+	</div>
 
-  <div class="colors">
-    <div class="color black"></div>
-    <div class="color red"></div>
-    <div class="color green"></div>
-    <div class="color blue"></div>
-    <div class="color yellow"></div>
-    <div class="color green2"></div>
-    <div class="color blue2"></div>
-    <div class="color yellow2"></div>
-  </div>
-
-
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-  <image id="player1" style="position: block; top:50%; left: 50%; width: 80px;" src="player.jpg">
-    <p id="count">0</p>
-
-<script>
-document.getElementById("count").innerHTML = var connectCounter;
-
-io.on("connection", function(s){
-   connectCounter += 1;
-   s.on("disconnect", function(){
-     connectCounter -= 1;
-   });
- });
-
-document.getElementById("count").innerHTML = connectCounter;
-</script>
-
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/main.js"></script>
+	<script src="scripts/client.js"></script>
 </body>
+
 </html>
