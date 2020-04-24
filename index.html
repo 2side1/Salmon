@@ -11,11 +11,44 @@
       <div id='scores'></div>
     </div>
     <canvas id="game" width="500" height="500"></canvas>
-
+    <button onclick="moveup()">UP</button>
+    <button onclick="movedown()">DOWN</button>
+    <button onclick="moveleft()">LEFT</button>
+    <button onclick="moveright()">RIGHT</button>
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
     <script src='./game.js'></script>
     <script src='./client.js'></script>
   </body>
+
+
+  <script>
+
+
+  function moveup() {
+    socket.emit('up', players);
+    accelPlayer(socket.id, 0, -1)
+    localDirection = 'up'
+  }
+
+  function movedown() {
+    socket.emit('down', players);
+    accelPlayer(socket.id, 0, 1)
+    localDirection = 'down'
+  }
+
+  function moveleft() {
+    socket.emit('left', players);
+    accelPlayer(socket.id, -1, 0)
+    localDirection = 'left'
+  }
+
+  function moveright() {
+    socket.emit('right', players);
+    accelPlayer(socket.id, 1, 0)
+    localDirection = 'right'
+  }
+  </script>
+
 </html>
