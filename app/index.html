@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chatbot</title>
+    <link rel="stylesheet" href="./styles/main.css">
+
+  </head>
+  <body>
+  <main class="page__main">
+    <div class="block--background">
+      <div class="chatbot__overview">
+        <ul class="chatlist">
+          <li class="bot__output bot__output--standard">Hey, I'm Morton!</li>
+          <li class="bot__output bot__output--standard">I will guide you through Micheal' portfolio!</li>
+          <li class="bot__output bot__output--standard">
+            <span class="bot__output--second-sentence">You can ask me a bunch of things!</span>
+            <ul>
+              <li class="input__nested-list">Something <span class="bot__command">about</span> Micheal</li>
+              <li class="input__nested-list">Micheal' <span class="bot__command">best work</span></li>
+              <li class="input__nested-list">Maybe I could <span class="bot__command">help</span> (for more instructions)</li>
+              <li class="input__nested-list">Type <span class="bot__command">commands</span> for a list of every command</li>
+            </ul>
+            You could also scroll down to see Micheal' full portfolio
+          </li>
+        </ul>
+        <ul id="messages"></ul>
+      </div>
+      <div class="chatbox-area">
+        <form action="" id="chatform">
+            <textarea id="m" autocomplete="off" placeholder="Talk to me!" class="chatbox" name="chatbox" resize: "none" minlength="2"></textarea>
+            <input class="submit-button" type="submit" value="send">
+        </form>
+      </div>
+    </div>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+      $(function () {
+        var socket = io();
+        $('form').submit(function(){
+          socket.emit('chat message', $('#m').val());
+          $('#m').val('');
+          return false;
+        });
+        socket.on('chat message', function(msg){
+          $('#messages').append($('<li>').text(msg));
+          window.scrollTo(0, document.body.scrollHeight);
+        });
+      });
+    </script>
+
+  <script src="./scripts/chatbot.js"></script>
+  <script>
+  var app = require('express')();
+  var http = require('http').Server(app);
+  var io = require('socket.io')(http);
+  var port = process.env.PORT || 3000;
+
+  app.get('/', function(req, res){
+    res.sendFile(__dirname + '/index.html');
+  });
+
+  io.on('connection', function(socket){
+    socket.on('chat message', function(msg){
+      io.emit('chat message', msg);
+    });
+  });
+
+  http.listen(port, function(){
+    console.log('listening on *:' + port);
+  });
+
+  </script>
+  </body>
+</html>
