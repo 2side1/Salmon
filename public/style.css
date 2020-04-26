@@ -19,10 +19,10 @@ html, body {
  */
 
 .whiteboard {
-  display: flex;
+  display: fixed;
   max-width: 1600px;
   height: 100vh;
-  overflow: hidden;
+  overflow: inherit;
   margin: 0 auto;
 }
 
