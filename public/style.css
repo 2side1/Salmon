@@ -48,7 +48,7 @@ html, body {
 }
 
 .left-side {
-  width: 260px;
+  width: 160px;
   border-right: 1px solid #272a3a;
   display: flex;
   flex-direction: column;
@@ -57,7 +57,7 @@ html, body {
   overflow: auto;
   flex-shrink: 0;
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1230px) {
   .left-side.active {
     z-index: 4;
   }
@@ -853,7 +853,7 @@ html, body {
 .left-side-button {
   display: none;
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1230px) {
   .left-side-button {
     display: flex;
     flex-shrink: 0;
