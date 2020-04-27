@@ -1,13 +1,17 @@
-# chat-example
 
-This is the source code for a very simple chat example used for
-the [Getting Started](http://socket.io/get-started/chat/) guide
-of the Socket.IO website.
+# Socket.IO Collaborative Whiteboard
 
-Please refer to it to learn how to run this application.
+A simple collaborative whiteboard for socket.io
 
-You can also spin up a free Heroku dyno to test it out:
+## How to use
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/socketio/chat-example)
+```
+$ npm ci && npm start
+```
 
-Besides, the application is deployed on [Now](https://zeit.co/now): https://socketio-chat-example.now.sh/
+And point your browser to `http://localhost:3000`. Optionally, specify
+a port by supplying the `PORT` env variable.
+
+## Features
+
+- draw on the whiteboard and all other users will see you drawings live
